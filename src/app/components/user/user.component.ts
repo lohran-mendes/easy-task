@@ -7,6 +7,7 @@ import { type User } from './user.model';
   styleUrls: ['./user.component.css'],
 })
 export class UserComponent {
+  @Input() selected!: boolean;
   @Input() user!: User;
   @Output() select = new EventEmitter();
 

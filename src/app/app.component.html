@@ -2,7 +2,7 @@
 <main>
   <ul id="users">
     <li *ngFor="let user of users, trackBy trackById">
-      <app-user [user]="user" (select)="onSelected($event)"></app-user>
+      <app-user [user]="user" (select)="onSelected($event)" [selected]="user.id == selectUserId"></app-user>
     </li>
   </ul>
   <app-tasks *ngIf="selectUser; else fallback" [name]="selectUser.name" [userId]="selectUser.id"></app-tasks>
