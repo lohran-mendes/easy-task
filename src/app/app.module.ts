@@ -6,19 +6,13 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { UserComponent } from './components/user/user.component';
 import { TasksComponent } from './components/tasks/tasks.component';
+import { NgFor, NgIf } from '@angular/common';
+import { TaskComponent } from './components/tasks/task/task.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HeaderComponent,
-    UserComponent,
-    TasksComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  declarations: [AppComponent, HeaderComponent, UserComponent, TasksComponent, TaskComponent],
+  imports: [BrowserModule, AppRoutingModule, NgFor, NgIf],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

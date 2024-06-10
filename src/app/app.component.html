@@ -5,6 +5,6 @@
       <app-user [user]="user" (select)="onSelected($event)"></app-user>
     </li>
   </ul>
-  <app-tasks *ngIf="selectUser; else notSelectUser" [name]="selectUser.name"></app-tasks>
-  <ng-template #notSelectUser id="fallback"> Selecione um usuário para ver as suas atividades!</ng-template>
+  <app-tasks *ngIf="selectUser; else fallback" [name]="selectUser.name" [userId]="selectUser.id"></app-tasks>
+  <ng-template #fallback id="fallback"> Selecione um usuário para ver as suas atividades!</ng-template>
 </main>

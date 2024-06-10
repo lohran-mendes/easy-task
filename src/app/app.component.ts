@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { DUMMY_USERS } from './dummy-users';
-import { User } from './components/user/user.component';
+import { type User } from './components/user/user.model';
 
 @Component({
   selector: 'app-root',
