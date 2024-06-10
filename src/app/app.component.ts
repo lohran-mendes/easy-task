@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { DUMMY_USERS } from './dummy-users';
+import { User } from './components/user/user.component';
 
 @Component({
   selector: 'app-root',
@@ -8,4 +9,17 @@ import { DUMMY_USERS } from './dummy-users';
 })
 export class AppComponent {
   users = DUMMY_USERS;
+  selectUserId?: string;
+
+  trackById(index: number, user: User): string {
+    return user.id;
+  }
+
+  get selectUser() {
+    return this.users.find((user) => user.id === this.selectUserId)!;
+  }
+
+  onSelected(id: string) {
+    this.selectUserId = id;
+  }
 }
