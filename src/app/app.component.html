@@ -1,20 +1,10 @@
 <app-header></app-header>
 <main>
   <ul id="users">
-    <li>
-      <app-user [avatar]="users[0].avatar" [name]="users[0].name"></app-user>
-    </li>
-    <li>
-      <app-user [avatar]="users[1].avatar" [name]="users[1].name"></app-user>
-    </li>
-    <li>
-      <app-user [avatar]="users[2].avatar" [name]="users[2].name"></app-user>
-    </li>
-    <li>
-      <app-user [avatar]="users[3].avatar" [name]="users[3].name"></app-user>
-    </li>
-    <li>
-      <app-user [avatar]="users[4].avatar" [name]="users[4].name"></app-user>
+    <li *ngFor="let user of users, trackBy trackById">
+      <app-user [user]="user" (select)="onSelected($event)" [selected]="user.id == selectUserId"></app-user>
     </li>
   </ul>
+  <app-tasks *ngIf="selectUser; else fallback" [name]="selectUser.name" [userId]="selectUser.id"></app-tasks>
+  <ng-template #fallback id="fallback"> Selecione um usuário para ver as suas atividades!</ng-template>
 </main>

@@ -1,0 +1,14 @@
+<section id="tasks">
+  <header>
+    <h2>Tarefas de {{ name }}</h2>
+    <menu>
+      <button (click)="onAddNewTask()">adicione uma tarefa</button>
+    </menu>
+  </header>
+  <ul>
+    <li *ngFor="let task of selectUser">
+      <app-task [task]="task" (taskComplete)="removeTask($event)"></app-task>
+    </li>
+    <app-new-task *ngIf="taskVisible"></app-new-task>
+  </ul>
+</section>
