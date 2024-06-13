@@ -8,9 +8,10 @@ import { UserComponent } from './components/user/user.component';
 import { TasksComponent } from './components/tasks/tasks.component';
 import { NgFor, NgIf } from '@angular/common';
 import { TaskComponent } from './components/tasks/task/task.component';
+import { NewTaskComponent } from './components/tasks/new-task/new-task.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, UserComponent, TasksComponent, TaskComponent],
+  declarations: [AppComponent, HeaderComponent, UserComponent, TasksComponent, TaskComponent, NewTaskComponent],
   imports: [BrowserModule, AppRoutingModule, NgFor, NgIf],
   providers: [],
   bootstrap: [AppComponent],

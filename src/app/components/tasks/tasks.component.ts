@@ -1,5 +1,4 @@
 import { Component, Input } from '@angular/core';
-import { Task } from './task/task.model';
 
 @Component({
   selector: 'app-tasks',
@@ -9,6 +8,7 @@ import { Task } from './task/task.model';
 export class TasksComponent {
   @Input() userId!: string;
   @Input() name?: string;
+  taskVisible: boolean = false;
   tasks = [
     {
       id: 't1',
@@ -37,7 +37,11 @@ export class TasksComponent {
   get selectUser() {
     return this.tasks.filter((task) => task.userId == this.userId);
   }
-  trackByID(index: number, task: Task) {
-    return task.id;
+
+  removeTask(id: string) {
+    this.tasks = this.tasks.filter((task) => task.id !== id);
+  }
+  onAddNewTask() {
+    this.taskVisible = true;
   }
 }
