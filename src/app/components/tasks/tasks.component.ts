@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { type NewTask } from './task/task.model';
 
 @Component({
   selector: 'app-tasks',
@@ -46,5 +47,11 @@ export class TasksComponent {
   }
   offAddNewTask() {
     this.taskVisible = false;
+  }
+  newTaskAdded(evento: NewTask) 
+  {
+    console.log(evento.title)
+    console.log(evento.summary)
+    console.log(evento.date)
   }
 }

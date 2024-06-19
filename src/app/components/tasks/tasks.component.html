@@ -9,6 +9,6 @@
     <li *ngFor="let task of selectUser">
       <app-task [task]="task" (taskComplete)="removeTask($event)"></app-task>
     </li>
-    <app-new-task *ngIf="taskVisible" (removeNewTask)="offAddNewTask()"></app-new-task>
+    <app-new-task *ngIf="taskVisible" (removeNewTask)="offAddNewTask()" (addNewTask)="newTaskAdded($event)"></app-new-task>
   </ul>
 </section>
