@@ -44,4 +44,7 @@ export class TasksComponent {
   onAddNewTask() {
     this.taskVisible = true;
   }
+  offAddNewTask() {
+    this.taskVisible = false;
+  }
 }
