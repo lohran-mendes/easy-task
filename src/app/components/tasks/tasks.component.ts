@@ -50,8 +50,15 @@ export class TasksComponent {
   }
   newTaskAdded(evento: NewTask) 
   {
-    console.log(evento.title)
-    console.log(evento.summary)
-    console.log(evento.date)
+ this.tasks.push(
+  {
+    id: new Date().getTime().toString(),
+    userId: this.userId,
+    title: evento.title,
+    summary: evento.summary,
+    dueDate: evento.date,
+  }
+)
+this.offAddNewTask()
   }
 }
