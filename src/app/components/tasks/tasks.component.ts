@@ -25,12 +25,7 @@ export class TasksComponent {
   onAddNewTask() {
     this.taskVisible = true;
   }
-  offAddNewTask() {
+  closeNewTask() {
     this.taskVisible = false;
-  }
-  newTaskAdded(evento: NewTask) {
-    this.taskService.addTask(evento, this.userId);
-
-    this.offAddNewTask();
   }
 }
