@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { type Task } from './task.model';
+import { DatePipe, formatDate } from '@angular/common';
 
 @Component({
   selector: 'app-task',
