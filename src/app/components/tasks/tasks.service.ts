@@ -6,6 +6,13 @@ import { type NewTask } from './task/task.model';
   providedIn: 'root',
 })
 export class TasksService {
+  constructor() {
+    const tasks = localStorage.getItem('tasks');
+    if (tasks) {
+      this.tasks = JSON.parse(tasks);
+    }
+  }
+
   private tasks = [
     {
       id: 't1',
@@ -44,9 +51,15 @@ export class TasksService {
       summary: evento.summary,
       dueDate: evento.date,
     });
+    this.attLocalTasks();
   }
 
   removeTask(id: string) {
     this.tasks = this.tasks.filter((task) => task.id !== id);
+    this.attLocalTasks();
+  }
+
+  private attLocalTasks() {
+    localStorage.setItem('tasks', JSON.stringify(this.tasks));
   }
 }
